@@ -6,21 +6,15 @@ Se dispone de los siguientes datos de varias vendedores: (nombre, monto venta)
 Cantidad de ventas que fueron por 100$ o menos: 1
 Cantidad de ventas mayores a 100$: 3
 Monto total de las ventas: 520$*/
-import cl_Venta from "./cl_Venta.js";
-import cl_Vendedor from "./cl_Vendedor.js";
+import cl_mVenta from "./cl_mVenta.js";
+import cl_vVenta from "./cl_vVenta.js";
+import cl_controlador from "./cl_controlador.js";
+export default class principal{
+    constructor(){
+        let modelo = new cl_mVenta();
+        let vista = new cl_vVenta();
+        let controlador = new cl_controlador(modelo, vista);
+        vista.controlador = controlador;
+    }
+}
 
-let vendedor1 = new cl_Vendedor("Mary", 150);
-let vendedor2 = new cl_Vendedor("Jose", 135);
-let vendedor3 = new cl_Vendedor("Carlos", 160);
-let vendedor4 = new cl_Vendedor("Pedro", 75);
-
-let venta = new cl_Venta();
-venta.procesarVendedor(vendedor1);
-venta.procesarVendedor(vendedor2);
-venta.procesarVendedor(vendedor3);
-venta.procesarVendedor(vendedor4);
-
-let salida = document.getElementById("salida");
-salida.innerHTML = `Cantidad de ventas que fueron por 100$ o menos: ${venta.cantMN100()}<br>
-Cantidad de ventas mayores a 100$: ${venta.cantMY100()}<br>
-Monto total de las ventas: ${venta.montoVendido()}$`;

@@ -1,5 +1,5 @@
-export default class cl_Vendedor {
-    constructor(nombre,montoV){
+export default class cl_mVendedor {
+    constructor({nombre, montoV}){
         this._nombre = nombre;
         this._montoV = montoV;
     }

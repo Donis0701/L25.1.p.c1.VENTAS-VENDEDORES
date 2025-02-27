@@ -1,4 +1,4 @@
-export default class cl_Venta {
+export default class cl_mVenta {
     constructor(){
         this.cntMY100 = 0;
         this.cntMN100 = 0;
